@@ -1,0 +1,6 @@
+en:
+  hello:
+    world: Hello world!
+  apples:
+    one: 1 apple
+    other: "%{count} apples"
