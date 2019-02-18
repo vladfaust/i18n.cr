@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/vladfaust/i18n.cr">
+  <title>I18n::Backend - github.com/vladfaust/i18n.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/Hash" data-name="hash(k, v)">
+      <a href="../Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="github.com/vladfaust/i18n.cr/I18n" data-name="i18n">
+      <a href="../I18n.html">I18n</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="github.com/vladfaust/i18n.cr/I18n/Backend" data-name="i18n::backend">
+      <a href="../I18n/Backend.html">Backend</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/DataNotLoadedError" data-name="i18n::backend::datanotloadederror">
+      <a href="../I18n/Backend/DataNotLoadedError.html">DataNotLoadedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/QuantityKeyProc" data-name="i18n::backend::quantitykeyproc">
+      <a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/TranslationNotFoundError" data-name="i18n::backend::translationnotfounderror">
+      <a href="../I18n/Backend/TranslationNotFoundError.html">TranslationNotFoundError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/BackendNotSetError" data-name="i18n::backendnotseterror">
+      <a href="../I18n/BackendNotSetError.html">BackendNotSetError</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vladfaust/i18n.cr/I18n/Backends" data-name="i18n::backends">
+      <a href="../I18n/Backends.html">Backends</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/Hash" data-name="i18n::backends::hash">
+      <a href="../I18n/Backends/Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/JSON" data-name="i18n::backends::json">
+      <a href="../I18n/Backends/JSON.html">JSON</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/YAML" data-name="i18n::backends::yaml">
+      <a href="../I18n/Backends/YAML.html">YAML</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">abstract class</span> I18n::Backend
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../I18n/Backend.html">I18n::Backend</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Backend is a storage for translations. All translations are stored in <code><a href="../I18n/Backend.html#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method">#data</a></code>.</p>
+
+<pre><code>backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>
+backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span>
+backend.load
+backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&quot;world&quot;</span>], <span class="s">&quot;en&quot;</span>) <span class="c"># =&gt; &quot;Hello world!&quot;</span></code></pre>
+
+
+
+
+
+
+
+
+
+  <h2>Direct Known Subclasses</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="../I18n/Backends/Hash.html">I18n::Backends::Hash</a></li>
+  
+    <li class="other-type"><a href="../I18n/Backends/JSON.html">I18n::Backends::JSON</a></li>
+  
+    <li class="other-type"><a href="../I18n/Backends/YAML.html">I18n::Backends::YAML</a></li>
+  
+  </ul>
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L14" target="_blank">
+        i18n/backend.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#quantity_key_procs%3AHash%28String%2CQuantityKeyProc%29-class-method" class="signature"><strong>.quantity_key_procs</strong> : Hash(String, QuantityKeyProc)</a>
+        
+          <div class="summary"><p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method" class="signature"><strong>#data</strong> : JSON::Any | YAML::Any | Nil</a>
+        
+          <div class="summary"><p>Storage for translations</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#load-instance-method" class="signature"><strong>#load</strong></a>
+        
+          <div class="summary"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths%3AArray%28String%29-instance-method">#load_paths</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#load_paths%3AArray%28String%29-instance-method" class="signature"><strong>#load_paths</strong> : Array(String)</a>
+        
+          <div class="summary"><p>Where to load locale files from.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate%28keys%3AArray%28String%29%2Clocale%3AString%2Ccount%3AInt32%3F%3Dnil%29-instance-method" class="signature"><strong>#translate</strong>(keys : Array(String), locale : String, count : Int32? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Find a translation by <em>keys</em> and <em>locale</em>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="quantity_key_procs:Hash(String,QuantityKeyProc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>quantity_key_procs</strong> : <a href="../Hash.html">Hash</a>(String, <a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a>)
+
+        <a class="method-permalink" href="#quantity_key_procs%3AHash%28String%2CQuantityKeyProc%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p>
+
+<p>Defaults with <code>"en"</code> key:</p>
+
+<pre><code><span class="s">&quot;en&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> <span class="k">do</span> <span class="o">|</span>count<span class="o">|</span>
+  <span class="k">if</span> count <span class="o">==</span> <span class="n">0</span>
+    <span class="s">&quot;zero&quot;</span>
+  <span class="k">elsif</span> count <span class="o">==</span> <span class="n">1</span>
+    <span class="s">&quot;one&quot;</span>
+  <span class="k">else</span>
+    <span class="s">&quot;other&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>Extend it with your own locales if you need:</p>
+
+<pre><code><span class="t">I18n</span><span class="t">::</span><span class="t">Backend</span>.quantity_key_procs.merge!({<span class="s">&quot;ru&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> { <span class="o">|</span>count<span class="o">|</span> your_code }})</code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L50" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="data:JSON::Any|YAML::Any|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>data</strong> : <a href="../JSON/Any.html">JSON::Any</a> | <a href="../YAML/Any.html">YAML::Any</a> | Nil
+
+        <a class="method-permalink" href="#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Storage for translations</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L53" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="load-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>load</strong>
+
+        <a class="method-permalink" href="#load-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths%3AArray%28String%29-instance-method">#load_paths</a></code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="load_paths:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>load_paths</strong> : Array(String)
+
+        <a class="method-permalink" href="#load_paths%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Where to load locale files from.</p>
+
+<pre><code>backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="translate(keys:Array(String),locale:String,count:Int32?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>translate</strong>(keys : Array(String), locale : String, count : Int32? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#translate%28keys%3AArray%28String%29%2Clocale%3AString%2Ccount%3AInt32%3F%3Dnil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Find a translation by <em>keys</em> and <em>locale</em>.</p>
+
+<p><em>locale</em> is prepended to the list of keys when searching for a translation.</p>
+
+<pre><code><span class="c"># Searches for &quot;en =&gt; hello =&gt; world&quot;</span>
+backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&quot;world&quot;</span>], <span class="s">&quot;en&quot;</span>) <span class="c"># =&gt; &quot;Hello world!&quot;</span>
+
+<span class="c"># Searches for &quot;en =&gt; apples =&gt; other&quot;</span>
+backend.translate([<span class="s">&quot;apples&quot;</span>], <span class="s">&quot;en&quot;</span>, count: <span class="n">3</span>) <span class="c"># =&gt; &quot;3 apples&quot;</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/vladfaust/i18n.cr/blob/d9b4977027ec85b41c63d675813fd45dd869a95f/src/i18n/backend.cr#L74" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

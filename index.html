@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.27.2">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/vladfaust/i18n.cr">
+  <title>README - github.com/vladfaust/i18n.cr</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/toplevel" data-name="top level namespace">
+      <a href="toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/Hash" data-name="hash(k, v)">
+      <a href="Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vladfaust/i18n.cr/I18n" data-name="i18n">
+      <a href="I18n.html">I18n</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="github.com/vladfaust/i18n.cr/I18n/Backend" data-name="i18n::backend">
+      <a href="I18n/Backend.html">Backend</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/DataNotLoadedError" data-name="i18n::backend::datanotloadederror">
+      <a href="I18n/Backend/DataNotLoadedError.html">DataNotLoadedError</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/QuantityKeyProc" data-name="i18n::backend::quantitykeyproc">
+      <a href="I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backend/TranslationNotFoundError" data-name="i18n::backend::translationnotfounderror">
+      <a href="I18n/Backend/TranslationNotFoundError.html">TranslationNotFoundError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/BackendNotSetError" data-name="i18n::backendnotseterror">
+      <a href="I18n/BackendNotSetError.html">BackendNotSetError</a>
+      
+    </li>
+  
+  <li class="parent " data-id="github.com/vladfaust/i18n.cr/I18n/Backends" data-name="i18n::backends">
+      <a href="I18n/Backends.html">Backends</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/Hash" data-name="i18n::backends::hash">
+      <a href="I18n/Backends/Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/JSON" data-name="i18n::backends::json">
+      <a href="I18n/Backends/JSON.html">JSON</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/vladfaust/i18n.cr/I18n/Backends/YAML" data-name="i18n::backends::yaml">
+      <a href="I18n/Backends/YAML.html">YAML</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1>I18n</h1>
+
+<p><a href="https://crystal-lang.org/" target="_blank"><img src="https://img.shields.io/badge/built%20with-crystal-000000.svg?style=flat-square" alt="Built with Crystal"/></a>
+<a href="https://travis-ci.org/vladfaust/i18n.cr" target="_blank"><img src="https://img.shields.io/travis/vladfaust/i18n.cr/master.svg?style=flat-square" alt="Build status"/></a>
+<a href="https://vladfaust.com/i18n.cr" target="_blank"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg?style=flat-square" alt="Docs"/></a>
+<a href="https://github.com/vladfaust/i18n.cr/releases" target="_blank"><img src="https://img.shields.io/github/release/vladfaust/i18n.cr.svg?style=flat-square" alt="Releases"/></a>
+<a href="https://github.com/veelenga/awesome-crystal" target="_blank"><img src="https://github.com/vladfaust/awesome/blob/badge-flat-alternative/media/badge-flat-alternative.svg" alt="Awesome"/></a>
+<a href="https://vladfaust.com" target="_blank"><img src="https://img.shields.io/badge/style-.com-lightgrey.svg?longCache=true&style=flat-square&label=vladfaust&colorB=0a83d8" alt="vladfaust.com"/></a>
+<a href="https://www.patreon.com/vladfaust" target="_blank"><img src="https://img.shields.io/badge/dynamic/json.svg?label=patrons&url=https://www.patreon.com/api/user/11296360&query=$.included[0].attributes.patron_count&style=flat-square&colorB=red&maxAge=86400" alt="Patrons count"/></a></p>
+
+<p>Internationalization module for <a href="https://crystal-lang.org/" target="_blank">Crystal</a>.</p>
+
+<p><a href="https://www.patreon.com/vladfaust" target="_blank"><img src="https://vladfaust.com/img/patreon-small.svg" alt="Become a Patron"/></a></p>
+
+<h2>Installation</h2>
+
+<p>Add this to your application's <code>shard.yml</code>:</p>
+
+<pre><code class="language-yaml">dependencies:
+  i18n:
+    github: vladfaust/i18n.cr
+    version: ~> 0.1.0 # See actual version in releases</code></pre>
+
+<p>This shard follows <a href="https://semver.org/" target="_blank">Semantic Versioning 2.0.0</a>, so see <a href="https://github.com/vladfaust/i18n.cr/releases" target="_blank">releases</a> and change the <code>version</code> accordingly.</p>
+
+<h2>Usage</h2>
+
+<pre><code class="language-yaml"># es.yml
+es:
+  apples:
+    one: 1 manzana
+    other: "%{count} manzanas"</code></pre>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;i18n&quot;</span>
+<span class="k">require</span> <span class="s">&quot;i18n/backends/yaml&quot;</span>
+
+<span class="t">I18n</span>.backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>.tap <span class="k">do</span> <span class="o">|</span>backend<span class="o">|</span>
+  backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span>
+  backend.load
+<span class="k">end</span>
+
+<span class="t">I18n</span>.default_locale <span class="c"># =&gt; &quot;en&quot;</span>
+<span class="t">I18n</span>.locale <span class="o">=</span> <span class="s">&quot;es&quot;</span>
+
+<span class="t">I18n</span>.t(<span class="s">&quot;apples&quot;</span>, count: <span class="n">3</span>) <span class="c"># =&gt; &quot;3 manzanas&quot;</span></code></pre>
+
+<p>You can implement your own <code><a href="I18n/Backend.html">I18n::Backend</a></code>, as well as your own quantity keys rules (<code>"one"</code>, <code>"many"</code> etc.). Read more in docs.</p>
+
+<h2>Development</h2>
+
+<p>Tests included! Run <code>crystal spec</code> while developing.</p>
+
+<p>There is currently no code for localization currencies, date and time etc. If you need it, please open an issue and/or a pull request.</p>
+
+<h2>Contributing</h2>
+
+<ol><li>Fork it ( https://github.com/vladfaust/i18n.cr/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+
+<h2>Contributors</h2>
+
+<ul><li><a href="https://github.com/vladfaust" target="_blank">@vladfaust</a> Vlad Faust - creator, maintainer</li></ul>
+</div>
+</body>
+</html>
