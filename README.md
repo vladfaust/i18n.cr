@@ -29,7 +29,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   i18n:
     github: vladfaust/i18n.cr
-    version: ~> 0.1.0 # See actual version in releases
+    version: ~> 0.1.1
 ```
 
 This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [releases](https://github.com/vladfaust/i18n.cr/releases) and change the `version` accordingly.
