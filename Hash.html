@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.27.2">
+<meta name="generator" content="Crystal Docs 0.28.0">
 
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -132,9 +132,34 @@
 
   <h2>Overview</h2>
 
-  <p>A <code><a href="Hash.html">Hash</a></code> represents a mapping of keys to values.</p>
+  <p>A <code><a href="Hash.html">Hash</a></code> represents a collection of key-value mappings, similar to a dictionary.</p>
 
-<p>See the <a href="http://crystal-lang.org/docs/syntax_and_semantics/literals/hash.html" target="_blank">official docs</a> for the basics.</p>
+<p>Main operations are storing a key-value mapping (<code>#[]=</code>) and
+querying the value associated to a key (<code>#[]</code>). Key-value mappings can also be
+deleted (<code>#delete</code>).
+Keys are unique within a hash. When adding a key-value mapping with a key that
+is already in use, the old value will be forgotten.</p>
+
+<pre><code><span class="c"># Create a new Hash for mapping String to Int32</span>
+hash <span class="o">=</span> <span class="t">Hash</span>(<span class="t">String</span>, <span class="t">Int32</span>).<span class="k">new</span>
+hash[<span class="s">&quot;one&quot;</span>] <span class="o">=</span> <span class="n">1</span>
+hash[<span class="s">&quot;two&quot;</span>] <span class="o">=</span> <span class="n">2</span>
+hash[<span class="s">&quot;one&quot;</span>] <span class="c"># =&gt; 1</span></code></pre>
+
+<p><a href="http://crystal-lang.org/reference/syntax_and_semantics/literals/hash.html" target="_blank">Hash literals</a>
+can also be used to create a <code><a href="Hash.html">Hash</a></code>:</p>
+
+<pre><code>{<span class="s">&quot;one&quot;</span> => <span class="n">1</span>, <span class="s">&quot;two&quot;</span> => <span class="n">2</span>}</code></pre>
+
+<p>Implementation is based on an open hash table.
+Two objects refer to the same hash key when their hash value (<code>Object#hash</code>)
+is identical and both objects are equal to each other (<code>Object#==</code>).</p>
+
+<p>Enumeration follows the order that the corresponding keys were inserted.</p>
+
+<p><span class="flag purple">NOTE</span>  When using mutable data types as keys, changing the value of a key after
+it was inserted into the <code><a href="Hash.html">Hash</a></code> may lead to undefined behaviour. This can be
+restored by re-indexing the hash with <code>#rehash</code>.</p>
 
 
 
