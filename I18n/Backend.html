@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.29.0">
+<meta name="generator" content="Crystal Docs 0.30.0">
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css">
@@ -132,7 +132,7 @@
 
   <h2>Overview</h2>
 
-  <p>Backend is a storage for translations. All translations are stored in <code><a href="../I18n/Backend.html#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method">#data</a></code>.</p>
+  <p>Backend is a storage for translations. All translations are stored in <code><a href="../I18n/Backend.html#data:JSON::Any%7CYAML::Any%7CNil-instance-method">#data</a></code>.</p>
 
 <pre><code>backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>
 backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span>
@@ -183,7 +183,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#quantity_key_procs%3AHash%28String%2CQuantityKeyProc%29-class-method" class="signature"><strong>.quantity_key_procs</strong> : Hash(String, QuantityKeyProc)</a>
+        <a href="#quantity_key_procs:Hash(String,QuantityKeyProc)-class-method" class="signature"><strong>.quantity_key_procs</strong> : Hash(String, QuantityKeyProc)</a>
         
           <div class="summary"><p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p></div>
         
@@ -197,7 +197,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method" class="signature"><strong>#data</strong> : JSON::Any | YAML::Any | Nil</a>
+        <a href="#data:JSON::Any%7CYAML::Any%7CNil-instance-method" class="signature"><strong>#data</strong> : JSON::Any | YAML::Any | Nil</a>
         
           <div class="summary"><p>Storage for translations</p></div>
         
@@ -206,19 +206,19 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
       <li class="entry-summary">
         <a href="#load-instance-method" class="signature"><strong>#load</strong></a>
         
-          <div class="summary"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths%3AArray%28String%29-instance-method">#load_paths</a></code>.</p></div>
+          <div class="summary"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths:Array(String)-instance-method">#load_paths</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#load_paths%3AArray%28String%29-instance-method" class="signature"><strong>#load_paths</strong> : Array(String)</a>
+        <a href="#load_paths:Array(String)-instance-method" class="signature"><strong>#load_paths</strong> : Array(String)</a>
         
           <div class="summary"><p>Where to load locale files from.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#translate%28keys%3AArray%28String%29%2Clocale%3AString%2Ccount%3AInt32%3F%3Dnil%29-instance-method" class="signature"><strong>#translate</strong>(keys : Array(String), locale : String, count : Int32? = <span class="n">nil</span>)</a>
+        <a href="#translate(keys:Array(String),locale:String,count:Int32?=nil)-instance-method" class="signature"><strong>#translate</strong>(keys : Array(String), locale : String, count : Int32? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Find a translation by <em>keys</em> and <em>locale</em>.</p></div>
         
@@ -264,7 +264,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         
         def self.<strong>quantity_key_procs</strong> : <a href="../Hash.html">Hash</a>(String, <a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a>)
 
-        <a class="method-permalink" href="#quantity_key_procs%3AHash%28String%2CQuantityKeyProc%29-class-method">#</a>
+        <a class="method-permalink" href="#quantity_key_procs:Hash(String,QuantityKeyProc)-class-method">#</a>
       </div>
       
         <div class="doc"><p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p>
@@ -303,7 +303,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         
         def <strong>data</strong> : <a href="../JSON/Any.html">JSON::Any</a> | <a href="../YAML/Any.html">YAML::Any</a> | Nil
 
-        <a class="method-permalink" href="#data%3AJSON%3A%3AAny%7CYAML%3A%3AAny%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#data:JSON::Any%7CYAML::Any%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Storage for translations</p></div>
@@ -324,7 +324,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#load-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths%3AArray%28String%29-instance-method">#load_paths</a></code>.</p></div>
+        <div class="doc"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths:Array(String)-instance-method">#load_paths</a></code>.</p></div>
       
       <br/>
       <div>
@@ -339,7 +339,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         
         def <strong>load_paths</strong> : Array(String)
 
-        <a class="method-permalink" href="#load_paths%3AArray%28String%29-instance-method">#</a>
+        <a class="method-permalink" href="#load_paths:Array(String)-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Where to load locale files from.</p>
@@ -359,7 +359,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         
         def <strong>translate</strong>(keys : Array(String), locale : String, count : Int32? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#translate%28keys%3AArray%28String%29%2Clocale%3AString%2Ccount%3AInt32%3F%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#translate(keys:Array(String),locale:String,count:Int32?=nil)-instance-method">#</a>
       </div>
       
         <div class="doc"><p>Find a translation by <em>keys</em> and <em>locale</em>.</p>
