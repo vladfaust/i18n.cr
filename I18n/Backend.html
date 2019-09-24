@@ -267,7 +267,9 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#quantity_key_procs:Hash(String,QuantityKeyProc)-class-method">#</a>
       </div>
       
-        <div class="doc"><p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p>
+        <div class="doc">
+          
+          <p>A list of <code><a href="../I18n/Backend/QuantityKeyProc.html">QuantityKeyProc</a></code>s associated with their locales.</p>
 
 <p>Defaults with <code>"en"</code> key:</p>
 
@@ -283,7 +285,8 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 
 <p>Extend it with your own locales if you need:</p>
 
-<pre><code><span class="t">I18n</span><span class="t">::</span><span class="t">Backend</span>.quantity_key_procs.merge!({<span class="s">&quot;ru&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> { <span class="o">|</span>count<span class="o">|</span> your_code }})</code></pre></div>
+<pre><code><span class="t">I18n</span><span class="t">::</span><span class="t">Backend</span>.quantity_key_procs.merge!({<span class="s">&quot;ru&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> { <span class="o">|</span>count<span class="o">|</span> your_code }})</code></pre>
+        </div>
       
       <br/>
       <div>
@@ -306,7 +309,10 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#data:JSON::Any%7CYAML::Any%7CNil-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Storage for translations</p></div>
+        <div class="doc">
+          
+          <p>Storage for translations</p>
+        </div>
       
       <br/>
       <div>
@@ -324,7 +330,10 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#load-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Loads data from <code><a href="../I18n/Backend.html#load_paths:Array(String)-instance-method">#load_paths</a></code>.</p></div>
+        <div class="doc">
+          
+          <p>Loads data from <code><a href="../I18n/Backend.html#load_paths:Array(String)-instance-method">#load_paths</a></code>.</p>
+        </div>
       
       <br/>
       <div>
@@ -342,9 +351,12 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#load_paths:Array(String)-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Where to load locale files from.</p>
+        <div class="doc">
+          
+          <p>Where to load locale files from.</p>
 
-<pre><code>backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span></code></pre></div>
+<pre><code>backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>
@@ -362,7 +374,9 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
         <a class="method-permalink" href="#translate(keys:Array(String),locale:String,count:Int32?=nil)-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Find a translation by <em>keys</em> and <em>locale</em>.</p>
+        <div class="doc">
+          
+          <p>Find a translation by <em>keys</em> and <em>locale</em>.</p>
 
 <p><em>locale</em> is prepended to the list of keys when searching for a translation.</p>
 
@@ -370,7 +384,8 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&quot;world&quot;</span>], <span class="s">&quot;en&quot;</span>) <span class="c"># =&gt; &quot;Hello world!&quot;</span>
 
 <span class="c"># Searches for &quot;en =&gt; apples =&gt; other&quot;</span>
-backend.translate([<span class="s">&quot;apples&quot;</span>], <span class="s">&quot;en&quot;</span>, count: <span class="n">3</span>) <span class="c"># =&gt; &quot;3 apples&quot;</span></code></pre></div>
+backend.translate([<span class="s">&quot;apples&quot;</span>], <span class="s">&quot;en&quot;</span>, count: <span class="n">3</span>) <span class="c"># =&gt; &quot;3 apples&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>

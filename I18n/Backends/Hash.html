@@ -261,11 +261,14 @@
         <a class="method-permalink" href="#new(data)-class-method">#</a>
       </div>
       
-        <div class="doc"><p>Initializes a backend and loads it with <em>data</em> (it <strong>MUST</strong> be a <code><a href="../../I18n/Backends/Hash.html">Hash</a></code>).</p>
+        <div class="doc">
+          
+          <p>Initializes a backend and loads it with <em>data</em> (it <strong>MUST</strong> be a <code><a href="../../I18n/Backends/Hash.html">Hash</a></code>).</p>
 
 <pre><code>backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">Hash</span>.<span class="k">new</span>.tap { <span class="o">|</span>b<span class="o">|</span> b.load({<span class="s">&quot;foo&quot;</span> => <span class="s">&quot;bar&quot;</span>}) }</code></pre>
 
-<p><span class="flag orange">TODO</span>  Find a way to implement this without external parsers.</p></div>
+<p><span class="flag orange">TODO</span>  Find a way to implement this without external parsers.</p>
+        </div>
       
       <br/>
       <div>

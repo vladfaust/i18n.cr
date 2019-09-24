@@ -276,14 +276,17 @@ restored by re-indexing the hash with <code>#rehash</code>.</p>
         <a class="method-permalink" href="#dig?(keys:Array(String))-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Digs deeply into self until found the value by keys.</p>
+        <div class="doc">
+          
+          <p>Digs deeply into self until found the value by keys.</p>
 
 <p>Returns nil if not found.</p>
 
 <p><span class="flag purple">NOTE</span>  The <em>keys</em> argument <strong>MAY</strong> be <strong>modified</strong> with <code>#shift</code> (you may <code>#dup</code> or <code>#clone</code> it before passing).</p>
 
 <pre><code>x <span class="o">=</span> {<span class="s">&quot;a&quot;</span> => <span class="s">&quot;b&quot;</span>, <span class="s">&quot;c&quot;</span> => {<span class="s">&quot;d&quot;</span> => <span class="s">&quot;e&quot;</span>}} <span class="c"># Instance of Hash</span>
-x.dig?([<span class="s">&quot;c&quot;</span>, <span class="s">&quot;d&quot;</span>]) <span class="c"># =&gt; &quot;e&quot;</span></code></pre></div>
+x.dig?([<span class="s">&quot;c&quot;</span>, <span class="s">&quot;d&quot;</span>]) <span class="c"># =&gt; &quot;e&quot;</span></code></pre>
+        </div>
       
       <br/>
       <div>
