@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
-<meta name="crystal_docs.project_version" content="HEAD">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="HEAD-dev">
 <meta name="crystal_docs.project_name" content="i18n">
+
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="i18n">
-  <title>I18n::Backend - i18n HEAD</title>
+  <meta name="repository-name" content="i18n">
+  <title>I18n::Backend - i18n HEAD-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,12 +39,12 @@
       </h1>
 
       <span class="project-version">
-        HEAD
+        HEAD-dev
       </span>
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -156,7 +156,7 @@
 
   <p>Backend is a storage for translations. All translations are stored in <code><a href="../I18n/Backend.html#data:JSON::Any%7CYAML::Any%7CNil-instance-method">#data</a></code>.</p>
 
-<pre><code>backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>
+<pre><code class="language-crystal">backend <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Backends</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>
 backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span>
 backend.load
 backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&quot;world&quot;</span>], <span class="s">&quot;en&quot;</span>) <span class="c"># =&gt; &quot;Hello world!&quot;</span></code></pre>
@@ -200,13 +200,6 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 </a>
     Defined in:
   </h2>
-  
-    
-      <a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L14" target="_blank">
-        i18n/backend.cr
-      </a>
-    
-    <br/>
   
 
 
@@ -330,7 +323,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 
 <p>Defaults with <code>"en"</code> key:</p>
 
-<pre><code><span class="s">&quot;en&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> <span class="k">do</span> <span class="o">|</span>count<span class="o">|</span>
+<pre><code class="language-crystal"><span class="s">&quot;en&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> <span class="k">do</span> <span class="o">|</span>count<span class="o">|</span>
   <span class="k">if</span> count <span class="o">==</span> <span class="n">0</span>
     <span class="s">&quot;zero&quot;</span>
   <span class="k">elsif</span> count <span class="o">==</span> <span class="n">1</span>
@@ -342,13 +335,11 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 
 <p>Extend it with your own locales if you need:</p>
 
-<pre><code><span class="t">I18n</span><span class="t">::</span><span class="t">Backend</span>.quantity_key_procs.merge!({<span class="s">&quot;ru&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> { <span class="o">|</span>count<span class="o">|</span> your_code }})</code></pre>
+<pre><code class="language-crystal"><span class="t">I18n</span><span class="t">::</span><span class="t">Backend</span>.quantity_key_procs.merge!({<span class="s">&quot;ru&quot;</span> => <span class="t">QuantityKeyProc</span>.<span class="k">new</span> { <span class="o">|</span>count<span class="o">|</span> your_code }})</code></pre>
         </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -381,8 +372,6 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
       <br/>
       <div>
         
-          [<a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L51" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -402,8 +391,6 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
       <br/>
       <div>
         
-          [<a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L61" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -419,13 +406,11 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
           
           <p>Where to load locale files from.</p>
 
-<pre><code>backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span></code></pre>
+<pre><code class="language-crystal">backend.load_paths <span class="o">&lt;&lt;</span> <span class="t">Dir</span>.current <span class="o">+</span> <span class="s">&quot;/locales&quot;</span></code></pre>
         </div>
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -444,7 +429,7 @@ backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&qu
 
 <p><em>locale</em> is prepended to the list of keys when searching for a translation.</p>
 
-<pre><code><span class="c"># Searches for &quot;en =&gt; hello =&gt; world&quot;</span>
+<pre><code class="language-crystal"><span class="c"># Searches for &quot;en =&gt; hello =&gt; world&quot;</span>
 backend.translate([<span class="s">&quot;hello&quot;</span>, <span class="s">&quot;world&quot;</span>], <span class="s">&quot;en&quot;</span>) <span class="c"># =&gt; &quot;Hello world!&quot;</span>
 
 <span class="c"># Searches for &quot;en =&gt; apples =&gt; other&quot;</span>
@@ -453,8 +438,6 @@ backend.translate([<span class="s">&quot;apples&quot;</span>], <span class="s">&
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/vladfaust/i18n.cr/blob/7f80fe9d39dbf932d9e5fb9b711e8dfb51b6801d/src/i18n/backend.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
