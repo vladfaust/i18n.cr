@@ -4,3 +4,5 @@ en:
   apples:
     one: 1 apple
     other: "%{count} apples"
+  setup:
+    testing: "%{update} RUNNING"

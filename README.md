@@ -28,8 +28,8 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   i18n:
-    github: vladfaust/i18n.cr
-    version: ~> 0.1.1
+    github: Liberatys/i18n.cr
+    version: ~> 0.1.2
 ```
 
 This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [releases](https://github.com/vladfaust/i18n.cr/releases) and change the `version` accordingly.
@@ -39,6 +39,8 @@ This shard follows [Semantic Versioning 2.0.0](https://semver.org/), so see [rel
 ```yaml
 # es.yml
 es:
+  testing:
+    setup: "%{wow} gogo"
   apples:
     one: 1 manzana
     other: "%{count} manzanas"
@@ -56,7 +58,8 @@ end
 I18n.default_locale # => "en"
 I18n.locale = "es"
 
-I18n.t("apples", count: 3) # => "3 manzanas"
+I18n.t("apples", I18n.locale, {"count" => "3") # => "3 manzanas"
+I18n.t("testing.setup", I18n.locale, {"wow" => "great") # => "great gogo"
 ```
 
 You can implement your own `I18n::Backend`, as well as your own quantity keys rules (`"one"`, `"many"` etc.). Read more in docs.

@@ -71,11 +71,13 @@ module I18n
     # # Searches for "en => apples => other"
     # backend.translate(["apples"], "en", count: 3) # => "3 apples"
     # ```
-    def translate(keys : Array(String), locale : String, count : Int32? = nil)
+    def translate(keys : Array(String), locale : String, arguments : Hash(String, String) = Hash(String, String).new)
       raise DataNotLoadedError.new unless data
 
+      count = arguments.dig?("count")
+
       unless count.nil?
-        keys << quantity_key(count, locale)
+        keys << quantity_key(count.to_i, locale)
       end
 
       # Prepend locale to the keys
@@ -84,10 +86,10 @@ module I18n
       translation = data.not_nil!.dig?(keys.dup).try &.to_s
       raise TranslationNotFoundError.new(keys, locale) unless translation
 
-      if count.nil?
-        return translation
-      else
-        return translation % {count: count}
+      begin
+        return translation % arguments
+      rescue ex
+        return "Translation Interpolation Error: #{ex.message}"
       end
     end
 
