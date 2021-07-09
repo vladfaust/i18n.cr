@@ -41,11 +41,14 @@ module I18n
   # I18n.translate(["hello", "world"])         # => "Hello world!"
   # I18n.translate(["apples"], "es", count: 3) # => "3 manzanas"
   # ```
-  def translate(keys : Array(String), locale : String? = locale || default_locale, count : Int32? = nil) : String
+  def translate(keys : Array(String),
+      locale : String? = locale || default_locale,
+      arguments : Hash(String, String) = Hash(String, String).new) : String
+
     raise BackendNotSetError.new unless backend
 
     begin
-      backend.not_nil!.translate(keys.dup, locale, count)
+      backend.not_nil!.translate(keys.dup, locale, arguments)
     rescue ex : Backend::TranslationNotFoundError
       raise ex unless rescue_missing
       "MISSING: #{locale}.#{keys.join(".")}"
@@ -58,13 +61,13 @@ module I18n
   # I18n.translate("hello.world")            # => "Hello world!"
   # I18n.translate("apples", "es", count: 3) # => "3 manzanas"
   # ```
-  def translate(key : String, *a, **n)
-    translate(key.split("."), *a, **n)
+  def translate(key : String, a, **n)
+    translate(key.split("."), a, **n)
   end
 
   # ditto
   def t(key : String, *a, **n)
-    translate(key, *a, **n)
+    translate(key.split("."), *a, **n)
   end
 
   # Raised when `I18n.backend` is nil.

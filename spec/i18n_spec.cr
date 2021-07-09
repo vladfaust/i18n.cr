@@ -7,11 +7,11 @@ require "../src/i18n/backends/yaml"
 macro define_i18n_tests
   describe "#t" do
     it "works" do
-      I18n.t("hello.world").should eq "Hello world!"
+      I18n.t("hello.world", "en").should eq "Hello world!"
     end
 
     it "works with count" do
-      I18n.t("apples", count: 3).should eq "3 apples"
+      I18n.t("apples", "en", {"count" => "3"}).should eq "3 apples"
     end
 
     it "works with locale" do
@@ -19,11 +19,23 @@ macro define_i18n_tests
     end
 
     it "works with locale and count" do
-      I18n.t("apples", "es", count: 3).should eq "3 manzanas"
+      I18n.t("apples", "es", {"count" => "3"}).should eq "3 manzanas"
+    end
+
+    it "works with locale and argument" do
+      I18n.t("setup.testing", "en", {"update" => "ONE"}).should eq "ONE RUNNING"
+    end
+
+    it "works with locale and no arguments" do
+      I18n.t("setup.testing", "en").should eq "Translation Interpolation Error: Missing hash key: \"update\""
+    end
+
+    it "ignores additional arguments" do
+      I18n.t("setup.testing", "en", { "crisper" => "WOW", "update" => "NOW" }).should eq "NOW RUNNING"
     end
 
     it "handles missing keys" do
-      I18n.t("unknown.key").should eq "MISSING: en.unknown.key"
+      I18n.t("unknown.key", "en").should eq "MISSING: en.unknown.key"
     end
   end
 end
